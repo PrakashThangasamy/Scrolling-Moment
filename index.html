@@ -1,0 +1,43 @@
+<head>
+  <link rel="stylesheet" type="text/css" href="style.css">
+</head>
+<style>
+  .flex-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  flex-direction: column;
+}
+.flex-item {
+  background-color: rgb(91, 128, 184);
+  width: 100px;
+  height: 100px;
+  margin: 10px;
+  transform:translatex(-642%);
+  transition:transform 2s ease;
+}
+.flex-container:nth-of-type(even) .flex-item{
+  transform: translatex(642%);
+}
+.flex-container.show-item .flex-item{
+  transform: translatex(0);
+}
+</style>
+<div class="flex-container">
+  <div class="flex-item" ></div>
+  <div class="flex-item" ></div>
+  <div class="flex-item" ></div>
+  <div class="flex-item" ></div>
+  <div class="flex-item" ></div>
+  <div class="flex-item" ></div>
+  <div class="flex-item" ></div>
+</div>
+<script>
+  let boxes = document.querySelectorAll('.flex-item');
+  window.addEventListener('scroll',function(){
+  for (let i = 0; i < boxes.length; i++) {
+     boxes[i].classList.add("flex-item");
+  }
+})
+</script>
